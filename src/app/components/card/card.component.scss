@@ -1,0 +1,27 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card-container{
+    padding: 8px;
+    margin: 15px;
+    border: 1px solid grey; 
+    background-color: #fff;
+    box-shadow: rgba(15,15,15,0.1) 0px,0px 0px,1px, rgba(15,15,15,0.1) 0px,2px,4px;
+    box-shadow: 5px 5px 0px 0.1px #ccc;
+    font-size: 15px;
+    cursor: pointer;
+}
+.card-header {
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid gray;
+}
+.close {
+    color:#ccc;
+    cursor: pointer;
+    float: right;
+    font-size: 25px;
+}
+.close:hover {
+    color: #343444;
+}

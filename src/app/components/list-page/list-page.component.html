@@ -1,0 +1,26 @@
+<h1>Trello Board</h1>
+<hr>
+<button style="float: right; cursor: pointer; margin-right:20px" (click)="addNewList()">ADD LIST</button>
+
+
+<div class="list-container">
+    <ng-container *ngFor="let item of list; let i = index">
+        <div class="list" id="div{{i}}" (drop)="drop($event,i)" (dragover)="allowDrop($event)">
+            <div class="header" id="header{{i}}">
+                <span>{{item.title}}</span>
+                <span class="close" (click)="removeList(i)"> &times;</span>
+            </div>
+            <hr>
+            <ng-container *ngFor="let card of item.cards; let ind = index">
+                <div id="card{{ind}}" draggable="true" (dragstart)="drag($event,card,i)">
+                    <app-card [currentCard]="card" (newCards)="getNewCards($event)" [containerInd]="i"
+                        [cardIndex]="ind">
+                    </app-card>
+                </div>
+            </ng-container>
+            <div>
+                <button (click)="addCard(i)">+</button>
+            </div>
+        </div>
+    </ng-container>
+</div>
